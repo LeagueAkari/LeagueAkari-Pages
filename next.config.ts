@@ -1,15 +1,11 @@
 import type { NextConfig } from 'next'
-
-const isCI = process.env.GITHUB_ACTIONS === 'true'
-const repo = process.env.GITHUB_REPOSITORY?.split('/')[1]
-const basePath = isCI && repo ? `/${repo}` : ''
+import { SITE_BASE } from '@/config/site'
 
 const nextConfig: NextConfig = {
   output: 'export',
   images: { unoptimized: true },
   reactCompiler: true,
-  basePath,
-  assetPrefix: basePath ? `${basePath}/` : ''
+  basePath: SITE_BASE
 }
 
 export default nextConfig

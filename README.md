@@ -1,3 +1,7 @@
 # League Akari Pages
 
-This is the pages for League Akari.
+League Akari 的静态站点。
+
+## Dev
+
+使用 `http://localhost:3000/LeagueAkari-Pages` 访问。
