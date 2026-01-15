@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("/fonts/Comfortaa-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -10,17 +25,24 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+  --font-logo: "Comfortaa", system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Segoe UI", sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-akari-50: #fff0f3;
+  --color-akari-100: #ffe3e9;
+  --color-akari-200: #ffc9d6;
+  --color-akari-300: #ffa0b6;
+  --color-akari-400: #ff6e91;
+  --color-akari-500: #f83f6f;
+  --color-akari-600: #e61d4f;
+  --color-akari-700: #c20e3a;
+  --color-akari-800: #a10f34;
+  --color-akari-900: #861230;
+  --color-akari-950: #4a0415;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
