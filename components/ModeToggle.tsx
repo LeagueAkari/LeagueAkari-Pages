@@ -11,10 +11,11 @@ export function ModeToggle() {
   if (!isMounted) {
     return (
       <button
-        className='rounded-md p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors'
-        aria-label='Toggle theme'>
-        <span className='sr-only'>Toggle theme</span>
-        <div className='w-5 h-5' />
+        className="rounded-md p-2 transition-colors hover:bg-neutral-200 dark:hover:bg-neutral-800"
+        aria-label="Toggle theme"
+      >
+        <span className="sr-only">Toggle theme</span>
+        <div className="h-5 w-5" />
       </button>
     )
   }
@@ -22,13 +23,10 @@ export function ModeToggle() {
   return (
     <button
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-      className='rounded-md p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors cursor-pointer'
-      aria-label='Toggle theme'>
-      {resolvedTheme === 'light' ? (
-        <Sun className='h-5 w-5' />
-      ) : (
-        <Moon className='h-5 w-5' />
-      )}
+      className="cursor-pointer rounded-md p-2 transition-colors hover:bg-neutral-200 dark:hover:bg-neutral-800"
+      aria-label="Toggle theme"
+    >
+      {resolvedTheme === 'light' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </button>
   )
 }
